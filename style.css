@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
+
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Light-pink: hsl(275, 100%, 97%);
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%);
+}
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url('./assets/images/background-pattern-desktop.svg') no-repeat var(--Light-pink);
+    background-size: contain 100vh;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    background-color: var(--White);
+    border-radius: .875rem;
+    max-width: 38rem;
+    padding: 2.5rem 2.5rem 1.5rem 2.5rem;
+}
+header{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+header h1{
+    font-size: 3.5rem;
+    color: var(--Dark-purple);
+    margin: 0;
+}
+section ul{
+    list-style: none;
+}
+section li{
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--Light-pink);
+}
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Dark-purple);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.question img{
+    margin-left: 1rem;
+}
+.question:hover p{
+    color: #AD28EB;
+    transition: 0.3s ease-in;
+}
+.answer{
+    margin-top: 1rem;
+    color: var(--Grayish-purple);
+    font-size: 1rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+section ul li:last-child{
+    border-bottom: none;
+}
+.active .answer{
+    max-height: 8rem;
+    opacity: 1;
+}
+@media screen and (max-width: 900px){
+    body{
+        background-image: url('./assets/images/background-pattern-mobile.svg');
+        background-size: contain;
+    }
+    main{
+        margin: 0 1.5rem;
+        padding: 1.5rem;
+    }
+    header{
+        transform: scale(.65);
+    }
+}
